@@ -14,7 +14,7 @@ const product = {
 export default function Detail() {
   return (
     <div className='mx-auto'>
-      <div className='lg:py-6 lg:w-full lg:px-20 px-5 py-2'>
+      <div className='lg:py-6 lg:w-full lg:px-20 px-5 py-2 flex flex-col items-center'>
         <img src={product.imageSrc} alt='' />
         <div className='mt-10'>
           <h2 className='text-3xl font-semibold'>{product.name}</h2>
