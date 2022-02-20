@@ -31,5 +31,9 @@ module.exports = {
     'react/jsx-curly-newline': 'off',
     'no-confusing-arrow': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'no-unused-vars': 'off',
+    'react/prop-types': 'off',
+    'no-underscore-dangle': 'off',
+    'operator-linebreak': 'off',
   },
 };

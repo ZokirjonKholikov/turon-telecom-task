@@ -1,4 +1,4 @@
-/* This example requires Tailwind CSS v2.0+ */
+import { NavLink } from 'react-router-dom';
 import headerImage from '../../assets/images/header-image.png';
 
 export default function Home() {
@@ -21,12 +21,12 @@ export default function Home() {
               </p>
               <div className='mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start'>
                 <div className='rounded-md shadow'>
-                  <a
-                    href='#'
+                  <NavLink
+                    to='/posts'
                     className='w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-400 hover:bg-orange-600 md:py-4 md:text-lg md:px-10'
                   >
                     Get started
-                  </a>
+                  </NavLink>
                 </div>
                 <div className='mt-3 sm:mt-0 sm:ml-3'>
                   <a

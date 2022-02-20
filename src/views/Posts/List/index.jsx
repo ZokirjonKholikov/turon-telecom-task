@@ -1,18 +1,35 @@
-import React from 'react';
-import PostCard from '../../../components/PostCard';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import Pagination from '../../../components/Pagination';
+import { useQuery } from '../../../hooks';
+import { fetchData } from '../../../redux/modules/posts/actions';
+import Spinner from '../../../components/Spinner';
+import Posts from '../../../components/Posts';
+import PostsFilter from '../../../components/Posts/FilteredBody';
+import service from '../../../services/users';
 
-const products = Array.from({ length: 10 }).map(() => ({
-  id: 1,
-  name: 'Basic Tee',
-  href: '#',
-  imageSrc:
-    'https://venngage-wordpress.s3.amazonaws.com/uploads/2020/10/Anatomy-of-the-Perfect-Blog-Post.png',
-  imageAlt: "Front of men's Basic Tee in black.",
-  price: '$35',
-  color: 'Black',
-}));
+export default () => {
+  const { pageIndex, setPageIndex, pageSize, setPageSize, user, setUser } =
+    useQuery({
+      fetchData,
+    });
+  const [users, setUsers] = useState([]);
+  const { total, data, loading } = useSelector((state) => state.postReducer);
 
-const Posts = () => {
+  useEffect(() => {
+    service
+      .getAll()
+      .then((resp) => {
+        const newData = resp.map((item) => ({
+          id: item.id,
+          name: item.name,
+        }));
+        setUsers(newData);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  if (loading) return <Spinner />;
   return (
     <div
       className='mx-auto'
@@ -21,14 +38,20 @@ const Posts = () => {
       }}
     >
       <div className='lg:py-6 lg:w-full lg:px-20 px-5 py-2'>
-        <div className='mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
-          {products.map((product, idx) => (
-            <PostCard key={`${idx + 1}`} {...product} />
-          ))}
-        </div>
+        <PostsFilter users={users} setUser={setUser} user={user} />
+        <Posts data={data} />
+        <Pagination
+          pageIndex={pageIndex}
+          pageCount={Math.ceil(total / pageSize)}
+          canPreviousPage={pageIndex > 0}
+          canNextPage={pageIndex < 9}
+          gotoPage={(e) => setPageIndex(e)}
+          pageSize={pageSize}
+          setPageSize={setPageSize}
+          nextPage={() => setPageIndex((prev) => prev + 1)}
+          previousPage={() => setPageIndex((prev) => prev - 1)}
+        />
       </div>
     </div>
   );
 };
-
-export default Posts;

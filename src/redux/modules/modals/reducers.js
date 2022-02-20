@@ -24,6 +24,6 @@ const map = {
 
 // eslint-disable-next-line max-len
 export default (state, action) =>
-  (map[action.type] && map[action.type](state, action)) ||
-  state ||
-  defaultState;
+  (map[action.type] && map[action.type](state, action))
+  || state
+  || defaultState;

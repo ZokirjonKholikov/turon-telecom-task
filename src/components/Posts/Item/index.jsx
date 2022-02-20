@@ -2,35 +2,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-const PostCard = ({ imageSrc, name, id }) => {
+const Item = ({ imageSrc, name, id, desc }) => {
   return (
-    <div className='group relative bg-white rounded-md'>
-      <div className='shadow rounded-md '>
+    <div className='group relative bg-white rounded-md shadow'>
+      <div>
         <img
           src={imageSrc}
           alt=''
           className='w-full h-36 object-cover object-top'
         />
         <div className='p-5'>
-          <h3 className='text-xl font-medium  text-gray-800 hover:underline'>
+          <h3
+            className='text-xl font-medium  text-gray-800 hover:underline'
+            title={name}
+          >
             <NavLink className='block' to={`/posts/detail/${id}`}>
-              {name}
+              {name.substr(0, 15)}...
             </NavLink>
           </h3>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo,
-            asperiores
-          </p>
+          <p>{desc}</p>
         </div>
       </div>
     </div>
   );
 };
 
-PostCard.propTypes = {
+Item.propTypes = {
   id: PropTypes.number.isRequired,
   imageSrc: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
 };
 
-export default PostCard;
+export default Item;
