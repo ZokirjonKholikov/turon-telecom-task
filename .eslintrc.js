@@ -35,5 +35,6 @@ module.exports = {
     'react/prop-types': 'off',
     'no-underscore-dangle': 'off',
     'operator-linebreak': 'off',
+    'no-console': 'off',
   },
 };
