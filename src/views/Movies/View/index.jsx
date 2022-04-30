@@ -27,7 +27,7 @@ export default () => {
             backgroundImage: `url(${movie?.bgImage})`,
           }}
         >
-          <div className='absolute top-0 left-0 flex justify-center items-center w-full h-full bg-black opacity-70' />
+          <div className='absolute top-0 left-0 flex justify-center items-center w-full h-full bg-black opacity-60' />
           <div className='relative z-40 w-24 h-24 bg-blue-600 rounded-full flex justify-center items-center'>
             <i className='text-3xl fa fa-play text-white' />
           </div>
