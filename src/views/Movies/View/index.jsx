@@ -61,10 +61,11 @@ export default () => {
                 <div className='flex flex-col sm:flex-row mt-2 gap-3 items-start sm:items-center'>
                   <span className='border border-gray-800 px-2 py-1 rounded'>
                     <i className='text-base fa fa-video text-black mr-2' />
-                    {movie.genres[0]?.genreName}
+                    {movie.genres.length !== 0 && movie?.genres[0]?.genreName}
                   </span>
                   <span className='border border-gray-800 px-2 py-1 rounded'>
-                    {movie?.qualities[0]?.qualityLabel}
+                    {movie?.qualities.length !== 0 &&
+                      movie?.qualities[0]?.qualityLabel}
                   </span>
                   <span className='text-orange-500 font-semibold'>
                     IMDB: {movie?.rates?.imdb}

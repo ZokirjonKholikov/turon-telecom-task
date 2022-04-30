@@ -2,7 +2,22 @@ import types from '../../../constants/action-types';
 
 const defaultState = {
   data: [],
-  movie: {},
+  movie: {
+    id: 0,
+    name: '',
+    image: '',
+    bgImage: '',
+    genres: [],
+    qualities: [],
+    rates: {},
+    desc: '',
+    year: '',
+    actors: [],
+    duration: '',
+    countries: [],
+    producers: [],
+    movieSlogan: '',
+  },
   similarMovies: [],
   comments: [],
   total: 0,
