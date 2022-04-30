@@ -1,1 +1,2 @@
-export { default as postSaga } from './posts/sagas';
+export { default as moviesSaga } from './movies/sagas';
+export { default as streamsSaga } from './streams/sagas';

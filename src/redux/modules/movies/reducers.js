@@ -2,36 +2,37 @@ import types from '../../../constants/action-types';
 
 const defaultState = {
   data: [],
-  post: {},
+  movie: {},
+  similarMovies: [],
   comments: [],
-  total: 105,
+  total: 0,
   error: '',
-  loading: false,
+  loading: true,
 };
 
 const map = {
-  [types.POSTS_SET_DATA]: (state, { payload }) => ({
+  [types.MOVIES_SET_DATA]: (state, { payload }) => ({
     ...state,
     data: payload,
   }),
-  [types.POSTS_SET_POST]: (state, { payload }) => ({
+  [types.SET_MOVIE]: (state, { payload }) => ({
     ...state,
-    post: payload,
+    movie: payload,
   }),
-  [types.POSTS_SET_POST_COMMENTS]: (state, { payload }) => ({
+  [types.SET_SIMILAR_MOVIE]: (state, { payload }) => ({
     ...state,
-    comments: payload,
+    similarMovies: payload,
   }),
-  [types.POSTS_SET_LOADING]: (state, { payload }) => ({
+  [types.MOVIES_SET_LOADING]: (state, { payload }) => ({
     ...state,
     loading: payload,
   }),
 
-  [types.POSTS_SET_TOTAL]: (state, { payload }) => ({
+  [types.MOVIES_SET_TOTAL]: (state, { payload }) => ({
     ...state,
     total: payload,
   }),
-  [types.POSTS_ERROR]: (state, { payload }) => ({
+  [types.MOVIES_ERROR]: (state, { payload }) => ({
     ...state,
     error: payload,
   }),

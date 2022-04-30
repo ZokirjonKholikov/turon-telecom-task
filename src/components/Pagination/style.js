@@ -34,12 +34,12 @@ export const Button = styled.button`
   min-width: calc(300px / 7);
   cursor: pointer;
   &:hover {
-    color: ${({ active }) => !active && '#E17436'};
+    color: ${({ active }) => !active && '#2563eb'};
   }
   &:focus {
     outline: none;
   }
-  ${({ active }) => active && 'color: #E17436;'}
+  ${({ active }) => active && 'color: #2563eb;'}
 `;
 
 export const ChangeButtons = styled.div`

@@ -12,13 +12,13 @@ export function useQuery({ fetchData }) {
   const [user, setUser] = useState('');
 
   const pageSizeQuery = useMemo(
-    () => (pageSize ? `&_limit=${pageSize}` : ''),
+    () => (pageSize ? `&itemsPerPage=${pageSize}` : ''),
     [pageSize]
   );
   const userQuery = useMemo(() => (user ? `&userId=${user}` : ''), [user]);
 
   const pageQuery = useMemo(
-    () => `_page=${user ? 1 : pageIndex + 1}`,
+    () => `page=${user ? 1 : pageIndex + 1}`,
     [pageIndex, user]
   );
 

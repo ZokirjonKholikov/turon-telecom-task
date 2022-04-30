@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import React from 'react';
 
 const Navbar = () => {
@@ -9,7 +8,7 @@ const Navbar = () => {
 
         <div className='flex gap-3 items-center'>
           <h4 className='text-gray-600 text-xs'>Phone:</h4>
-          <h2>71 123 45 67</h2>
+          <h2>77 123 45 67</h2>
         </div>
       </div>
     </div>

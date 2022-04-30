@@ -1,8 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import Layout from '../components/Layout';
 import Home from '../views/Home';
-import Posts from '../views/Posts/List';
-import Detail from '../views/Posts/View';
+import Movies from '../views/Movies/List';
+import MovieDetail from '../views/Movies/View';
+import LiveStreams from '../views/LiveStreams/List';
 
 export const routes = [
   {
@@ -10,19 +11,20 @@ export const routes = [
     path: '/',
     children: [
       { path: '/', element: <Home /> },
+      { path: '/streams', element: <LiveStreams /> },
       {
-        path: '/posts',
+        path: '/movies',
         children: [
           {
             index: true,
             element: (
               <>
-                <Posts />
+                <Movies />
                 <Outlet />
               </>
             ),
           },
-          { path: 'detail/:id', element: <Detail /> },
+          { path: ':id', element: <MovieDetail /> },
         ],
       },
     ],

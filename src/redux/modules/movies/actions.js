@@ -1,40 +1,40 @@
 import types from '../../../constants/action-types';
 
 export const setData = (payload) => ({
-  type: types.POSTS_SET_DATA,
+  type: types.MOVIES_SET_DATA,
   payload,
 });
 
 export const setTotal = (payload) => ({
-  type: types.POSTS_SET_TOTAL,
+  type: types.MOVIES_SET_TOTAL,
   payload,
 });
 export const setLoading = (payload) => ({
-  type: types.POSTS_SET_LOADING,
+  type: types.MOVIES_SET_LOADING,
   payload,
 });
-export const setPost = (payload) => ({
-  type: types.POSTS_SET_POST,
+export const setMovie = (payload) => ({
+  type: types.SET_MOVIE,
   payload,
 });
-export const setPostComments = (payload) => ({
-  type: types.POSTS_SET_POST_COMMENTS,
+export const setSimilatMovie = (payload) => ({
+  type: types.SET_SIMILAR_MOVIE,
   payload,
 });
 export const setError = (payload) => ({
-  type: types.POSTS_ERROR,
+  type: types.MOVIES_ERROR,
   payload,
 });
 export const fetchData = (payload) => ({
-  type: types.POSTS_FETCH_DATA,
+  type: types.MOVIES_FETCH_DATA,
   payload,
 });
-export const fetchPost = (payload) => ({
-  type: types.POSTS_FETCH_POST,
+export const fetchMovie = (payload) => ({
+  type: types.FETCH_MOVIE_DETAIL,
   payload,
 });
 
 export const onSearch = (payload) => ({
-  type: types.POSTS_SAGA_ONSEARCH_ACTION,
+  type: types.MOVIES_SAGA_ONSEARCH_ACTION,
   payload,
 });

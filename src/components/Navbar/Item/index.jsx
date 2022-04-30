@@ -8,8 +8,8 @@ export default function Item({ name, href }) {
       to={href}
       className={({ isActive }) =>
         isActive
-          ? ' text-orange-500 font-medium  hover:text-gray-900'
-          : 'text-gray-500 font-medium  hover:text-gray-900'
+          ? ' text-white font-medium py-2  border-b border-white'
+          : 'text-white font-medium py-2  hover:border-b hover:border-white'
       }
     >
       {name}

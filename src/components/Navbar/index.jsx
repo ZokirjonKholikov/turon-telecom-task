@@ -8,9 +8,9 @@ import Item from './Item';
 
 export default function Navbar() {
   return (
-    <div className='min-h-full shadow-sm'>
+    <div className='min-h-full shadow-sm bg-blue-900'>
       <Popover>
-        <div className='relative  lg:py-6 lg:w-full lg:px-20 px-5 py-2'>
+        <div className='relative  lg:py-3 lg:w-full lg:px-20 px-5 py-2'>
           <nav
             className='relative flex items-center justify-between sm:h-10 lg:justify-start'
             aria-label='Global'
@@ -18,7 +18,6 @@ export default function Navbar() {
             <div className='flex items-center flex-grow '>
               <div className='flex items-center justify-between w-full md:w-auto'>
                 <NavLink to='/'>
-                  <span className='sr-only'>Workflow</span>
                   <Logo />
                 </NavLink>
                 <div className='-mr-2 flex items-center md:hidden'>
@@ -35,9 +34,9 @@ export default function Navbar() {
               ))}
               <NavLink
                 to='#'
-                className='px-3 py-2 border border-transparent text-base font-medium rounded-md text-white bg-orange-400 hover:bg-orange-300 md:py-2 md:text-lg md:px-9'
+                className='px-3 py-2 border border-transparent text-base font-medium rounded-md text-white md:py-2 md:text-lg md:px-9'
               >
-                Get Started
+                Login
               </NavLink>
             </div>
           </nav>

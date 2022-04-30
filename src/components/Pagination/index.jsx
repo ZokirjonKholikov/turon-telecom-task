@@ -29,7 +29,7 @@ const Pagination = ({
       <SelectSize size={pageSize} setPageSize={setPageSize} />
       <Container>
         <ChangeButton
-          color={!canPreviousPage ? '#C4C4C4' : '#E17436'}
+          color={!canPreviousPage ? '#C4C4C4' : '#2563eb'}
           disabled={!canPreviousPage}
           onClick={previousPage}
         >
@@ -51,7 +51,7 @@ const Pagination = ({
           ))}
         </PageButtons>
         <ChangeButton
-          color={!canNextPage ? '#C4C4C4' : '#E17436'}
+          color={!canNextPage ? '#C4C4C4' : '#2563eb'}
           disabled={!canNextPage}
           onClick={nextPage}
         >
