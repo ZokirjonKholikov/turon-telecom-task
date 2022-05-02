@@ -5,7 +5,6 @@ import { useQuery } from '../../../hooks';
 import { fetchData } from '../../../redux/modules/movies/actions';
 import Spinner from '../../../components/Spinner';
 import Card from '../../../components/Movies';
-// import Filter from '../../../components/Movies/FilteredBody';
 
 export default () => {
   const { pageIndex, setPageIndex, pageSize, setPageSize, user, setUser } =
