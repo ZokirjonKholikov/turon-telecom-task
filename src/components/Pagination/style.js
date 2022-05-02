@@ -11,7 +11,7 @@ export const Container = styled.div`
   margin: 15px;
   justify-content: flex-end;
   align-items: center;
-  grid-gap: 10px;
+  grid-gap: 8px;
 `;
 
 export const PageButtons = styled.div`

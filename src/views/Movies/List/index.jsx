@@ -23,8 +23,7 @@ export default () => {
         backgroundColor: '#f9f9f9',
       }}
     >
-      <div className='lg:py-6 lg:w-full lg:px-20 px-5 py-2 max-w-8xl'>
-        {/* <Filter users={users} setUser={setUser} user={user} /> */}
+      <div className='lg:py-6 lg:w-full lg:px-20 px-2 py-2 max-w-8xl'>
         <Card data={data} movie />
         <Pagination
           pageIndex={pageIndex}

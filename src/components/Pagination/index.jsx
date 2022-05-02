@@ -25,19 +25,23 @@ const Pagination = ({
   };
 
   return (
-    <Wrapper className='flex-col sm:flex-row p-5 items-end'>
-      <SelectSize size={pageSize} setPageSize={setPageSize} />
+    <Wrapper className='flex-col sm:flex-row p-2 items-end'>
+      <div className='hidden sm:block'>
+        <SelectSize size={pageSize} setPageSize={setPageSize} />
+      </div>
       <Container>
-        <ChangeButton
-          color={!canPreviousPage ? '#C4C4C4' : '#2563eb'}
-          disabled={!canPreviousPage}
-          onClick={previousPage}
-        >
-          <ChevronLeftIcon
-            // color={!canPreviousPage ? '#C4C4C4' : '#262626'}
-            fontSize='medium'
-          />
-        </ChangeButton>
+        <div className='hidden sm:block'>
+          <ChangeButton
+            color={!canPreviousPage ? '#C4C4C4' : '#2563eb'}
+            disabled={!canPreviousPage}
+            onClick={previousPage}
+          >
+            <ChevronLeftIcon
+              // color={!canPreviousPage ? '#C4C4C4' : '#262626'}
+              fontSize='medium'
+            />
+          </ChangeButton>
+        </div>
         <PageButtons repeat={pageCount > 7 ? 7 : pageCount}>
           {buttons.map((title, index) => (
             <Button
@@ -50,16 +54,18 @@ const Pagination = ({
             </Button>
           ))}
         </PageButtons>
-        <ChangeButton
-          color={!canNextPage ? '#C4C4C4' : '#2563eb'}
-          disabled={!canNextPage}
-          onClick={nextPage}
-        >
-          <ChevronRightIcon
-            // color={!canPreviousPage ? '#C4C4C4' : '#262626'}
-            fontSize='medium'
-          />
-        </ChangeButton>
+        <div className='hidden sm:block'>
+          <ChangeButton
+            color={!canNextPage ? '#C4C4C4' : '#2563eb'}
+            disabled={!canNextPage}
+            onClick={nextPage}
+          >
+            <ChevronRightIcon
+              // color={!canPreviousPage ? '#C4C4C4' : '#262626'}
+              fontSize='medium'
+            />
+          </ChangeButton>
+        </div>
       </Container>
     </Wrapper>
   );
