@@ -13,7 +13,7 @@ const Item = ({
 }) => {
   const [show, setShow] = useState(false);
   return (
-    <div className='group relative p-1'>
+    <div className='group relative p-1 max-w-10'>
       <div>
         <NavLink
           to={movie ? `/movies/${id}` : '/streams'}

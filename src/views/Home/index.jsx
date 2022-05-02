@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className='relative bg-white overflow-hidden'>
       <div
-        className='w-full h-screen flex justify-center items-center'
+        className='w-full h-screen flex justify-center items-center p-5'
         style={{
           backgroundImage: `url(${Homebg})`,
         }}

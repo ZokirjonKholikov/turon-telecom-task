@@ -53,9 +53,9 @@ export default function Navbar() {
         >
           <Popover.Panel
             focus
-            className='absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden'
+            className='absolute z-50 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden'
           >
-            <div className='rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden'>
+            <div className='rounded-lg shadow-md bg-blue-800 ring-1 ring-black ring-opacity-5 overflow-hidden'>
               <div className='px-5 pt-4 flex items-center justify-between'>
                 <div>
                   <Logo />
@@ -68,8 +68,10 @@ export default function Navbar() {
                 </div>
               </div>
               <div className='px-2 pt-2 pb-3 space-y-1'>
-                {navigation.map((item) => (
-                  <Item name={item.name} href={item.href} key={item.name} />
+                {navigation.map((item, idx) => (
+                  <div className='p-2' key={`${idx + 1}`}>
+                    <Item name={item.name} href={item.href} />
+                  </div>
                 ))}
               </div>
               <NavLink

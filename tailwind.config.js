@@ -5,6 +5,10 @@ module.exports = {
       height: {
         100: '800px',
       },
+      maxWidth: {
+        10: '190px',
+        '8xl': '1600px',
+      },
     },
   },
   plugins: [],

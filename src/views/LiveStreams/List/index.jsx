@@ -15,12 +15,12 @@ export default () => {
   if (loading) return <Spinner />;
   return (
     <div
-      className='mx-auto'
+      className='mx-auto flex justify-center items-center'
       style={{
         backgroundColor: '#f9f9f9',
       }}
     >
-      <div className='lg:py-6 lg:w-full lg:px-20 px-5 py-2'>
+      <div className='lg:py-6 lg:w-full lg:px-20 px-5 py-2  max-w-8xl'>
         <Card data={data} />
         <Pagination
           pageIndex={pageIndex}

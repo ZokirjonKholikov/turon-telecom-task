@@ -7,24 +7,19 @@ import { useDispatch } from 'react-redux';
 export function useQuery({ fetchData }) {
   const dispatch = useDispatch();
   const [search, setSearch] = useState('');
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(12);
   const [pageIndex, setPageIndex] = useState(0);
-  const [user, setUser] = useState('');
 
   const pageSizeQuery = useMemo(
     () => (pageSize ? `&itemsPerPage=${pageSize}` : ''),
     [pageSize]
   );
-  const userQuery = useMemo(() => (user ? `&userId=${user}` : ''), [user]);
 
-  const pageQuery = useMemo(
-    () => `page=${user ? 1 : pageIndex + 1}`,
-    [pageIndex, user]
-  );
+  const pageQuery = useMemo(() => `page=${pageIndex + 1}`, [pageIndex]);
 
   const query = useMemo(
-    () => `${pageQuery}${pageSizeQuery}${userQuery}`,
-    [pageQuery, pageSizeQuery, userQuery]
+    () => `${pageQuery}${pageSizeQuery}`,
+    [pageQuery, pageSizeQuery]
   );
 
   useEffect(() => {
@@ -55,8 +50,6 @@ export function useQuery({ fetchData }) {
     pageIndex,
     pageSize,
     setSearch,
-    user,
-    setUser,
     setPageIndex,
     setPageSize,
   };

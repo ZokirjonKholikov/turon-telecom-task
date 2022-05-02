@@ -7,7 +7,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-const pageSize = [10, 20, 50];
+const pageSize = [12, 24, 64];
 
 export default ({ size, setPageSize }) => {
   return (
